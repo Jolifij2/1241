@@ -1,9 +1,7 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
 #include <locale>
-#include <codecvt>
 
 using namespace std;
 
@@ -13,7 +11,7 @@ void compareFiles(const string& filename1, const string& filename2) {
     ifstream file2(filename2);
 
     if (!file1.is_open() || !file2.is_open()) {
-        cerr << "Ошибка: Невозможно открыть один или оба файла." << endl;
+        cerr << "Ошибка" << endl;
         return;
     }
 
@@ -66,16 +64,16 @@ int main() {
     cout << "Задание 1:" << endl;
     compareFiles("file1.txt", "file2.txt");
     cout << endl;
-return 0;
+    return 0;
 }
 
-// Задание 2
+// Задание 2 работа с первыми буквами текста
 void analyzeFile(const string& inputFilename, const string& outputFilename) {
     ifstream inputFile(inputFilename);
     ofstream outputFile(outputFilename);
 
     if (!inputFile.is_open() || !outputFile.is_open()) {
-        cerr << "Ошибка: Невозможно открыть файлы." << endl;
+        cerr << "Ошибка" << endl;
         return;
     }
 
@@ -113,13 +111,13 @@ void analyzeFile(const string& inputFilename, const string& outputFilename) {
     outputFile.close();
     cout << "Статистика записана в файл " << outputFilename << endl;
 }
-  
+
 int main() {
-    setlocale(LC_ALL, "ru"); 
-cout << "Задание 2:" << endl;
+    setlocale(LC_ALL, "ru");
+    cout << "Задание 2:" << endl;
     analyzeFile("input.txt", "output.txt");
     cout << endl;
-return 0;
+    return 0;
 }
 
 //Задание 3
